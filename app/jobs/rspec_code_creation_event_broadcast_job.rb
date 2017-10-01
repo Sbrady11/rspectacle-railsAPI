@@ -1,0 +1,3 @@
+class RspecCodeCreationEventBroadcastJob < ApplicationJob
+
+end

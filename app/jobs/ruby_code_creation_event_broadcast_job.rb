@@ -1,0 +1,3 @@
+class RubyCodeCreationEventBroadcastJob < ApplicationJob
+
+end
