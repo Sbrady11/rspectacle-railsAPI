@@ -1,0 +1,2 @@
+class RspecCode < ApplicationRecord
+end
