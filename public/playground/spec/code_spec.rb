@@ -1,2 +1,2 @@
-require 'code'
- rspec
+require_relative "../lib/code"
+qwer

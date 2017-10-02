@@ -11,7 +11,8 @@ class PlaygroundChannel < ApplicationCable::Channel
       content: opts.fetch('content')
     )
     # does this belong here?
-    rspecCode = "require 'code'\n#{@rspec_code.content}"
+    path = '"../lib/code"'
+    rspecCode = "require_relative #{path}\n#{@rspec_code.content}"
     puts opts.fetch('content')
     File.open("./public/playground/spec/code_spec.rb","w") do |file|
       file.write(rspecCode) 
