@@ -1,10 +1,10 @@
 class RubyCodeCreationEventBroadcastJob < ApplicationJob
   queue_as :default
   
-  def perform(ruby_code)
+  def perform
     ActionCable.server.broadcast(
-      'playground_channel',
-      ruby: ruby_code
+      'playgrounc_channel',
+      test_result: %x()
     )
   end
 end
