@@ -4,7 +4,8 @@ class RspecCodeCreationEventBroadcastJob < ApplicationJob
   def perform(rspec_code)
     ActionCable.server.broadcast(
       'playground_channel',
-      rspecCode: rspec_code
+      rspecCode: rspec_code.content
     )
+    # Update Rspec File
   end
 end
