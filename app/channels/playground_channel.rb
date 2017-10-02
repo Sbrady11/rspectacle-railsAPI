@@ -7,7 +7,7 @@ class PlaygroundChannel < ApplicationCable::Channel
   end
 
   def create_rspec_code(opts)
-    @rpec_code = RspecCode.create(
+    @rspec_code = RspecCode.create(
       rspec: opts.fetch('rspec')
     )
   end
