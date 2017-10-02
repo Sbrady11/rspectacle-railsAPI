@@ -4,7 +4,7 @@ class RubyCodeCreationEventBroadcastJob < ApplicationJob
   def perform(ruby_code)
     ActionCable.server.broadcast(
       'playground_channel',
-      ruby: ruby_code
+      rubyCode: ruby_code.content
     )
   end
 end

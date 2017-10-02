@@ -8,14 +8,25 @@ class PlaygroundChannel < ApplicationCable::Channel
 
   def create_rspec_code(opts)
     @rspec_code = RspecCode.create(
-      rspec: opts.fetch('rspec')
+      content: opts.fetch('content')
     )
+    # does this belong here?
+    path = '"../lib/code"'
+    rspecCode = "require_relative #{path}\n#{@rspec_code.content}"
+    puts opts.fetch('content')
+    File.open("./public/playground/spec/code_spec.rb","w") do |file|
+      file.write(rspecCode) 
+    end
   end
 
   def create_ruby_code(opts)
     @ruby_code = RubyCode.create(
-      ruby: opts.fetch('ruby')
+      content: opts.fetch('content')
     )
+    # does this belong here?
+    File.open("./public/playground/lib/code.rb","w") do |file|
+      file.write(opts.fetch('content'))  
+    end
   end
 
   def run_rspec
