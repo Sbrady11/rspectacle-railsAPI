@@ -6,6 +6,19 @@ class PlaygroundChannel < ApplicationCable::Channel
   def unsubscribed
   end
 
-  def create(opts)
+  def create_rspec_code(opts)
+    @rspec_code = RspecCode.create(
+      rspec: opts.fetch('rspec')
+    )
+  end
+
+  def create_ruby_code(opts)
+    @ruby_code = RubyCode.create(
+      ruby: opts.fetch('ruby')
+    )
+  end
+
+  def run_rspec
+    RunRspecEventBroadcastJob.perform_now
   end
 end
