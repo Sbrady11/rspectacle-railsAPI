@@ -4,7 +4,7 @@ class RunRspecEventBroadcastJob < ApplicationJob
   def perform
     ActionCable.server.broadcast(
       'playground_channel',
-      test_result: %x() # rspec <path>: ./public/playground/spec/<filename>
+      testResult: %x(rspec) # rspec <path>: ./public/playground/spec/<filename>
     )
   end
 end
