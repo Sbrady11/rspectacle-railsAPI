@@ -1,4 +1,4 @@
-class RubyCodeCreationEventBroadcastJob < ApplicationJob
+class RunRspecEventBroadcastJob < ApplicationJob
   queue_as :default
   
   def perform
