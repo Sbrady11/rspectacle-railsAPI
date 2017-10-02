@@ -3,7 +3,7 @@ class RubyCodeCreationEventBroadcastJob < ApplicationJob
   
   def perform
     ActionCable.server.broadcast(
-      'playgrounc_channel',
+      'playground_channel',
       test_result: %x()
     )
   end
