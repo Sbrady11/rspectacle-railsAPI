@@ -19,6 +19,6 @@ class PlaygroundChannel < ApplicationCable::Channel
   end
 
   def run_rspec
-    RubyCodeCreationEventBroadcastJob.perform_now
+    RunRspecBroadcastJob.perform_now
   end
 end
