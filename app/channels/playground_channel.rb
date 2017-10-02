@@ -14,7 +14,7 @@ class PlaygroundChannel < ApplicationCable::Channel
 
   def create_ruby_code(opts)
     @ruby_code = RubyCode.create(
-      ruby: opts.fetch('rubyCode')
+      content: opts.fetch('rubyCode')
     )
   end
 
