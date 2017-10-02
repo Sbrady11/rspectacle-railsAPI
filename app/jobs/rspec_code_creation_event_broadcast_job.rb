@@ -6,6 +6,5 @@ class RspecCodeCreationEventBroadcastJob < ApplicationJob
       'playground_channel',
       rspecCode: rspec_code.content
     )
-    # Update Rspec File
   end
 end
