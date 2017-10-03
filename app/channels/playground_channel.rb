@@ -4,6 +4,14 @@ class PlaygroundChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
+    if ActionCable.server.connections.length == 0
+      File.open("./public/playground/spec/code_spec.rb","w") do |file|
+        file.write('')
+      end
+      File.open("./public/playground/lib/code.rb","w") do |file|
+        file.write('')
+      end
+    end
   end
 
   def create_rspec_code(opts)
