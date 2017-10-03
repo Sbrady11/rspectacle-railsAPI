@@ -1,2 +1,5 @@
 require_relative "../lib/code"
-qwer
+asdf
+asdfasdf
+asdf'
+asdfasdf
