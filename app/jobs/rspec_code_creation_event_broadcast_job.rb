@@ -2,14 +2,20 @@ class RspecCodeCreationEventBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(rspec_code)
-    # Write File
-    writeIntoSpecFile(rspec_code)
-    # Broadcast
-    broadcast('playground_channel',
-              rspecCode: rspec_code.content)
+    #validation
+    unless !!validateRspecCode(rspec_code)
+      # Write File
+      writeIntoSpecFile(rspec_code)
+      # Broadcast
+      broadcast('playground_channel',
+                rspecCode: rspec_code.content)
+    end
   end
 
   private
+    def validateRspecCode(rspec_code)
+      (/(require)|(File)|(IO)|(ENV)|(Dir)|(ARGVS)|(GC)|(Kernel)|(Thread)|(%x)/.match(rspec_code.content))
+    end
     def writeIntoSpecFile(rspec_code)
       path = '"../lib/code"'
       spec = "require_relative #{path}\n#{rspec_code.content}"
