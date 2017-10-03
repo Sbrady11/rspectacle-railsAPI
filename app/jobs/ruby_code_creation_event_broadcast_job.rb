@@ -3,7 +3,7 @@ class RubyCodeCreationEventBroadcastJob < ApplicationJob
   
   def perform(ruby_code)
     # Validation
-    unless !!sanitizeRubyCode(ruby_code)
+    unless !!validateRubyCode(ruby_code)
       # Write File
       writeIntoRubyFile(ruby_code)
       # Broadcast
@@ -13,7 +13,7 @@ class RubyCodeCreationEventBroadcastJob < ApplicationJob
   end
 
   private
-    def sanitizeRubyCode(ruby_code)
+    def validateRubyCode(ruby_code)
       (/(require)|(File)|(IO)|(ENV)|(Dir)|(ARGVS)|(GC)|(Kernel)|(Thread)|(%x)/.match(ruby_code.content))
     end
     def writeIntoRubyFile(ruby_code)
