@@ -2,8 +2,6 @@ class RspecCodeCreationEventBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(rspec_code)
-    # Validation
-    
     # Write File
     writeIntoSpecFile(rspec_code)
     # Broadcast
