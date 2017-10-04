@@ -9,6 +9,9 @@ class RubyCodeCreationEventBroadcastJob < ApplicationJob
       # Broadcast
       broadcast('playground_channel',
                 rubyCode: ruby_code.content)
+    else
+      broadcast('playground_channel',
+                rubyCode: "Can not run restricted module")
     end
   end
 
