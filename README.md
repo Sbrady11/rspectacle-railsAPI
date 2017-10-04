@@ -1,19 +1,19 @@
-#RSpectacle Back End
+# RSpectacle Back End
 
-##Credits
+## Credits
 - @heretoeternity
 - @sambok
 - @sbrady11
 
-##About
+## About
 This backend requires the relevant [frontend] to work on your local machine (https://github.com/OG-Hawks/rspectacle-react)
 
-##Specs
+## Specs
 * Ruby version
 - Ruby 2.4.1p111
 - Rails 5.1.4
 
-##Installation
+## Installation
 
 1. `git clone https://github.com/OG-Hawks/rspectacle-railsAPI.git`
 
