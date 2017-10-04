@@ -11,7 +11,7 @@ class RspecCodeCreationEventBroadcastJob < ApplicationJob
                 rspecCode: rspec_code.content)
     else
       broadcast('playground_channel',
-                rspecCode: "Can not run restricted module")
+                rspecCode: "")
     end
   end
 
