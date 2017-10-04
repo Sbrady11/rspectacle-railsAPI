@@ -9,7 +9,6 @@
 This backend requires the relevant [frontend] to work on your local machine (https://github.com/OG-Hawks/rspectacle-react)
 
 ## Specs
-* Ruby version
 - Ruby 2.4.1p111
 - Rails 5.1.4
 
