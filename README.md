@@ -1,24 +1,27 @@
-# README
+# RSpectacle Back End
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Credits
+- @heretoeternity
+- @sambok
+- @sbrady11
 
-Things you may want to cover:
+## About
+This backend requires the relevant [frontend] to work on your local machine (https://github.com/OG-Hawks/rspectacle-react)
 
-* Ruby version
+## Specs
+- Ruby 2.4.1p111
+- Rails 5.1.4
 
-* System dependencies
+## Installation
 
-* Configuration
+1. `git clone https://github.com/OG-Hawks/rspectacle-railsAPI.git`
 
-* Database creation
+2. `cd rspectacle-railsAPI`
 
-* Database initialization
+3. `bundle install`
 
-* How to run the test suite
+4. `be rake db:create`
 
-* Services (job queues, cache servers, search engines, etc.)
+5. `be rake db:migrate`
 
-* Deployment instructions
-
-* ...
+6. `rails s -p 3001`
